@@ -15,4 +15,5 @@ Project 3-b Removing Unwanted Noises from Real Scene Images using GANs
 - Please visualize the image before denoising and after denoising with GAN. Measure the image quality using PSNR, SSIM and FID etc
 
 - ## Kaggle
-- [Kaggle Dataset](https://www.kaggle.com/datasets/rajat95gupta/smartphone-image-denoising-dataset)
+- [Kaggle Small Dataset](https://www.kaggle.com/datasets/rajat95gupta/smartphone-image-denoising-dataset)
+- [Kaggle Medium Dataset](https://www.kaggle.com/datasets/soumikrakshit/smartphone-image-denoising-dataset)
