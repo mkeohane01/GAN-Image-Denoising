@@ -13,3 +13,6 @@ Project 3-b Removing Unwanted Noises from Real Scene Images using GANs
 - There are a lot of computer vision use cases where real-scene images are captured for example, semantic segmentation of scene, low light object detection, image analysis on CCTV camera feed, etc. It can also help restore the images that have degraded over time or were clicked with old low-quality cameras. GANs is one of the ways to resolve this problem. For training the model, you can use the very popular SIDD or Smartphone Image Denoising Dataset for training the model. It contains ~30,000 noisy images from 10 scenes under different lighting conditions using five different smartphones
 
 - Please visualize the image before denoising and after denoising with GAN. Measure the image quality using PSNR, SSIM and FID etc
+
+- ## Kaggle
+- [Kaggle Dataset](https://www.kaggle.com/datasets/rajat95gupta/smartphone-image-denoising-dataset)
