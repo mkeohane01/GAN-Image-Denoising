@@ -1,0 +1,5 @@
+fastai
+pillow
+torch
+numpy
+scikit-learn

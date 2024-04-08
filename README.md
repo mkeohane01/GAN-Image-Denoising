@@ -1,19 +1,55 @@
-# GAN-Image-Denoising
-Training Generative Adversarial Networks to de-noise smart phone images using the [SSID](https://abdokamel.github.io/sidd/) dataset
+# Exploring Generative Adversarial Networks for Image Denoising
 
+## Introduction
+This project investigates the application of Generative Adversarial Networks (GANs) for the task of image denoising. 
 
-# Project Guidelines
+## Data
+We leverage two primary datasets for training and evaluation:
 
-Project 3-b Removing Unwanted Noises from Real Scene Images using GANs
+- [**Smartphone Image Denoising Dataset (SIDD)**](https://abdokamel.github.io/sidd/): Contains 160 unique image scenes in various noise versions, originally in high resolution and downsampled to 512x512 for this project.
+- [**BLUR Dataset**](https://www.kaggle.com/datasets/kwentar/blur-dataset): A collection from Kaggle featuring blurred images alongside their sharp counterparts, aimed at testing the model's ability to restore clarity.
 
-- Ever clicked a picture with your mobile of the perfect sunset with just the right amount of reds and yellows? But when you looked at the picture, it was too grainy in texture, spoiling the quality of the capture. It could have been the next Instagram viral picture, but now you can’t show it to anyone. Well, nothing to worry about. GANs are here to your rescue.
-- This grainy texture of the image is known as noise. While some minimal amount of noise is present in every clicked picture, sometimes very prominent due to external sources of interference, malfunctioning camera sensors, poor lighting conditions, etc. The process of removing noise from images is known as Image Denoising
+## Models
+Our approach includes both a custom GAN model built with PyTorch and an implementation utilizing the FastAI library. 
 
-- Denoising images become particularly important if the data collected is for training an ML/DL model, as poor quality images will lead to poor model performance.
-- There are a lot of computer vision use cases where real-scene images are captured for example, semantic segmentation of scene, low light object detection, image analysis on CCTV camera feed, etc. It can also help restore the images that have degraded over time or were clicked with old low-quality cameras. GANs is one of the ways to resolve this problem. For training the model, you can use the very popular SIDD or Smartphone Image Denoising Dataset for training the model. It contains ~30,000 noisy images from 10 scenes under different lighting conditions using five different smartphones
+- **Custom GAN**: Developed using PyTorch, comprises a generator and discriminator designed specifically for the denoising task.
+- **FastAI GAN**: Leveraging the FastAI library's tools and pre-built architectures, we crafted a U-Net model with a ResNet34 backbone for effective image denoising.
 
-- Please visualize the image before denoising and after denoising with GAN. Measure the image quality using PSNR, SSIM and FID etc
+## Training
+The training process involves adversarial training of the generator and discriminator, optimizing them to produce denoised images that are as close as possible to their original, noise-free versions. 
 
-- ## Kaggle
-- [Kaggle Small Dataset](https://www.kaggle.com/datasets/rajat95gupta/smartphone-image-denoising-dataset)
-- [Kaggle Medium Dataset](https://www.kaggle.com/datasets/soumikrakshit/smartphone-image-denoising-dataset)
+## Results
+Our experiments reveal that while the custom GAN showed potential, the FastAI implementation yielded more effective denoising results.
+
+## Results
+
+### Custom GAN - SIDD Dataset
+
+| Metric        | Input Image | Denoised Image |
+|---------------|-------------|----------------|
+| Average PSNR  | 39.09       | 28.36          |
+| Average SSIM  | 0.9296      | 0.5036         |
+
+### FastAI GAN - SIDD Dataset
+
+| Metric        | Input Image | Denoised Image |
+|---------------|-------------|----------------|
+| Average PSNR  | 38.66       | 37.21          |
+| Average SSIM  | 0.9136      | 0.9443         |
+
+### PyTorch GAN Visualization
+
+![PyTorch GAN Visualization](resources\custom-train-results.png)
+
+### FastAI GAN Visualization
+
+![FastAI GAN Visualization](resources\fastai-results.png)
+
+## Conclusion
+The project demonstrates the feasibility of using GANs for image denoising, with significant success achieved using the FastAI framework. The exploration opens up further avenues for research, particularly in areas like image super-resolution and the use of more advanced GAN architectures for image restoration tasks.
+
+## How to Use
+Training and Evaluation was done through Kaggle and Google Colab. The corresponding notebooks represent each implementation method.
+
+## Acknowledgments
+Conducted as part of the AIPI 590 - Computer Vision course at Duke University tought by Xu Chen.
