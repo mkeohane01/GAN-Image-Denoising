@@ -39,11 +39,11 @@ Our experiments reveal that while the custom GAN showed potential, the FastAI im
 
 ### PyTorch GAN Visualization
 
-![PyTorch GAN Visualization](resources\custom-train-results.png)
+![PyTorch GAN Visualization](resources/custom-train-results.png)
 
 ### FastAI GAN Visualization
 
-![FastAI GAN Visualization](resources\fastai-results.png)
+![FastAI GAN Visualization](resources/fastai-results.png)
 
 ## Conclusion
 The project demonstrates the feasibility of using GANs for image denoising, with significant success achieved using the FastAI framework. The exploration opens up further avenues for research, particularly in areas like image super-resolution and the use of more advanced GAN architectures for image restoration tasks.
